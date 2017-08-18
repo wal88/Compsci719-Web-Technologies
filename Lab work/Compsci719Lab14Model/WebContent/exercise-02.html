@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Upload an image</title>
+
+<!-- using relative URLs -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <!-- jQuery hosted by Google -->
+<script src="js/validate.js"></script>
+</head>
+
+<body>
+
+	<form action="ImageGallerySubmit" method="post" enctype="multipart/form-data">
+	
+	<fieldset><legend>Upload an image (5Mb max)</legend>
+	<input type="file" required="required" name="file" id="file_id" size="100" />
+	<br />
+	<input type="text" required="required" size="100" name="caption" id="caption_id" placeholder="Type a caption to go with the image here" />
+	</fieldset>
+	
+	<input type="submit" id="submit_id" value="Upload" />
+	</form>
+
+</body>
+</html>

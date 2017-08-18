@@ -1,0 +1,99 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	font-family: Roboto, Georgia, serif;
+	padding: 50px 20%;
+}
+
+h1, h2, h3, b, strong {
+	color: SteelBlue;
+}
+
+h1 {
+	text-transform: uppercase;
+}
+
+h1, h3 {
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
+
+h2:after {
+	content: ' ';
+	display: block;
+	border: 2px solid black;
+	color: LightSlateGray;
+}
+
+hr {
+	border: LightSlateGray 0.5px dashed;
+	width: 50%;
+}
+
+p {
+	color: DarkSlateGray;
+	font-style: italic;
+}
+
+#number1-achievement {
+	color: red;
+}
+
+thead {
+	font-weight: bold;
+	color: Plum;
+}
+
+table#tabular {
+	border-collapse: collapse;
+	border-spacing: 20px 5;
+}
+
+.oddrow {
+		background-color: #EEE0E5;
+	
+}
+
+td {
+	padding: 15px;
+}
+
+ol, ul {
+	display: table;
+	margin: 0 auto;
+}
+
+a:link {
+	color: blue;
+} /* Unvisited link */
+a:visited {
+	color: grey;
+}
+
+a:hover {
+	color: red;
+}
+
+a:active {
+	color: orange;
+}
+
+.sitemap {
+	border-left: thick dashed rgba(111, 255, 233, 0.9);
+	border-right: thick dashed rgba(111, 255, 233, 0.9);
+}
+
+img {
+	border: none;
+	float: left; /* image will appear on the left, with text flowing 
+		                around its right side */
+}
+
+iframe#menu {
+	  
+	   position: relative;  /* else z-index will be ignored */
+	   z-index: 1; /* or higher value as needed to get menus up front */
+}

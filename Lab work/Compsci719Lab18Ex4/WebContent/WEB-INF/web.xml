@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Compsci719Lab18Ex3</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>FormDataList</servlet-name>
+    <servlet-class>ictgradschool.FormDataList </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FormDataList</servlet-name>
+    <url-pattern>/FormDataList </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ImageGallerySubmit</servlet-name>
+    <servlet-class>ictgradschool.ImageGallerySubmit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ImageGallerySubmit</servlet-name>
+    <url-pattern>/ImageGallerySubmit</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RegisterUser</servlet-name>
+    <servlet-class>ictgradschool.RegisterUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterUser</servlet-name>
+    <url-pattern>/RegisterUser</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <description>Tmp Location to store large uploaded files</description>
+    <param-name>tmp-location</param-name>
+    <param-value>
+         H:\sfac_apps\eclipse\Compsci719Lab18Ex3
+     </param-value>
+  </context-param>
+</web-app>

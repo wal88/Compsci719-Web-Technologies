@@ -1,0 +1,5 @@
+
+The browser used for testing was:
+
+  firefox
+

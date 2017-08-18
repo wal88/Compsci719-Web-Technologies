@@ -1,0 +1,30 @@
+body {	
+	padding: 50px 20%; 
+	background-color: #eeeeee;
+}
+
+h1, h2, h3, strong, b {
+        color: SteelBlue;
+}
+
+				
+h1, h3 {
+	text-align: center;	
+}
+
+h2 {
+	text-align: right;
+	border-bottom: 2px solid LightSlateGray;
+}
+
+p {	
+	font-family: Georgia, serif;
+	color: DarkSlateGray;
+	line-height: 175%;
+	text-align: justify;
+}
+
+hr {
+	border: 1px dotted LightSlateGray;
+	width: 50%;		
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Image uploading</title>
+<script src="js/validateEx5.js"></script> 
+
+</head>
+<body>
+	<h1>Image uploading</h1>
+
+	<h5>Please upload your image:</h5>
+	<form  method="POST" autocomplete="on"  enctype="multipart/form-data" action="ImageGallerySubmit" onsubmit="event.preventDefault(); if(validate()) {submit();}">
+
+		<input type="file" name="image" accept="image/*" required="required" onchange="checkImageAndCorrectSize(this)" />
+		
+		<br /> 
+		
+		<label for="caption">Please enter your caption for this image</label> 
+		<input type="text" id="caption" name="caption" required="required" onchange="checkCaption()" default="my image caption" />
+		<br/>
+		<input type="submit" value="Submit"/>
+	</form>
+
+</body>
+</html>

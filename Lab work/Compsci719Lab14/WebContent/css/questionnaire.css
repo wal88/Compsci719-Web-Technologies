@@ -1,0 +1,44 @@
+
+	
+	legend { color: white; }	
+	
+	span#email_error { 
+		color: red; 
+		display: none;
+	}
+	
+	/* div#container {
+		margin-left: 430px;
+		margin-left: 40%; 
+		width: 55%;
+		min-width: 600px;
+	
+		height: 100%;
+		width: 100%;
+		opacity: 0.8;
+		background-blend-mode: lighten;
+	} */
+	
+	form { 
+		/*margin: auto;*/
+		/*margin-left: 30%;
+		margin-left: 430px;*/
+		
+	}		
+
+	input[type=number] {
+		width: 2rem;
+	}
+	
+	legend { font-weight: bold; }
+	
+	.question { font-style: italic; }
+	
+	.right { text-align: right;	}
+	
+	h1 { text-align: center; }
+	
+	fieldset {	    
+	  border-radius: 5px;
+	  border: 2px solid white;	  
+	}	

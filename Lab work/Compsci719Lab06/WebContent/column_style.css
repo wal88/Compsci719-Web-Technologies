@@ -1,0 +1,23 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	font-family: Arial;
+}
+
+div {
+	-webkit-column-count: 3; /* Chrome, Safari, Opera */
+	-moz-column-count: 3; /* Firefox */
+	column-count: 3;
+	
+	-webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+	-moz-column-gap: 40px; /* Firefox */
+	column-gap: 40px;
+	
+	-webkit-column-rule-width: 1px; /* Chrome, Safari, Opera */
+    -moz-column-rule-width: 1px; /* Firefox */
+    column-rule-width: 1px;
+    
+    -webkit-column-rule: 5px solid darkgreen; /* Chrome, Safari, Opera */
+    -moz-column-rule: 5px solid darkgreen; /* Firefox */
+    column-rule: 5px solid darkgreen;
+}

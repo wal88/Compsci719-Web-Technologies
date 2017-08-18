@@ -1,0 +1,105 @@
+body {
+		height: 100%;
+		margin-top:5%;		
+	}
+
+	/* centred container to ensure images are centred */
+	div#container {
+		margin: auto;
+		width: 700px; /* image width and height */
+		height: 541px;
+		/* absolutely positioned elements within this container div will be positioned relative to this container's origin */
+		position: relative; 
+	}
+
+	p.centre { text-align: center; }
+
+	/* All imgs will appear inside the div#container and will be positioned absolutely with respect to it*/
+
+	img {		
+		position: absolute;
+	}
+	
+	img#background {
+		top: 0;
+		left: 0;
+		z-index: 0;
+	}
+
+	img#tree {
+		top: 113px; /* push the tree img down to the bottom of the bg img */
+		width: 700px; /* Reduce the tree img's width to that of the bg img, this will then also limit the height accordingly */
+		z-index: 2;
+		
+		pointer-events: none; /* Hover events on the tree img will be passed on to baubles behind the tree in stacking order 
+					SEE http://caniuse.com/#feat=pointer-events */
+	}
+
+	/* We want the baubles in front of the tree, so they get the highest z-index value */
+	img.bauble {
+		z-index: 3; 	
+	}	
+
+	#red {
+		left: 42px;
+		top: 341px;
+	}
+	
+	#blue {
+		left: 113px;
+		top: 226px;
+	}
+
+	#green {
+		left: 425px;
+		top: 211px;
+	}
+
+	#orange {
+		left: 604px;
+		top: 281px;
+	}
+
+	#darkblue {
+		left: 300px;
+		top: 276px;		
+	}
+
+	/* We'll (partly) obscure the pink bauble with the tree, by giving it 
+		a lower z-index than the tree but higher than the background. 
+		CSS styling on ids override the same properties styled for the class. */
+	#pink {
+		z-index: 1;
+		left: 400px;
+		top: 330px;
+	}
+	
+	/* Hover over the image and the baubles should drop */
+	#container img.fall {
+		
+		-webkit-animation-name: dropbounce; 
+		-webkit-animation-duration: 4s; 
+		animation-fill-mode:forwards;		
+	
+		animation-name: dropbounce;
+		animation-duration: 4s;
+		animation-fill-mode:forwards;
+	}
+	
+	/* Chrome, Safari, Opera */
+	@-webkit-keyframes dropbounce {	   
+		50%  {top: 430px;} /* ground level */
+		75%  {top: 380px;} /* bounce */
+		85%  {top: 430px;}
+		93%  {top: 420px;}
+		100%  {top: 430px;}
+	}
+
+	/* Standard syntax */
+	@keyframes dropbounce {	   
+		50%  {top: 430px;} /* ground level */
+		65%  {top: 400px;} /* bounce */
+		80%  {top: 430px;}
+		92%  {top: 420px;}		
+		100%  {top: 430px;}
+	}

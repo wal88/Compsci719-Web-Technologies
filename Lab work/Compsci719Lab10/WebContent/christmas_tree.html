@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Christmas tree in New Zealand</title>
+<style>
+body {
+	background-image: url("assets/whangamata_summer.jpg");
+	background-size: cover;
+	position:relative;
+	z-index:1;
+}
+#tree {
+	position: relative;
+	left: 950px;
+	top: 550px;
+	z-index:2;
+}
+#bauble1 {
+	position: absolute;
+	left: 1050px;
+	top: 800px;
+	z-index:3;
+}
+#bauble2 {
+	position: absolute;
+	left: 1150px;
+	top: 750px;
+	z-index:3;
+}
+#bauble3 {
+	position: absolute;
+	left: 1250px;
+	top: 800px;
+	z-index:3;
+}
+#bauble4 {
+	position: absolute;
+	left: 1350px;
+	top: 700px;
+	z-index:3;
+}
+#bauble5 {
+	position: absolute;
+	left: 1550px;
+	top: 800px;
+	z-index:3;
+}
+
+.baubles:hover {
+  	animation: fall-down 3s forwards;
+}
+
+.dropped {
+	margin-top: 8% !important;
+}
+
+@keyframes fall-down {
+  	0%   {margin-top:	0;}
+    50%  {margin-top:   8%;}
+    62%  {margin-top: 7.5%;}
+    74%  {margin-top:   8%;}
+    86%  {margin-top: 7.8%;}
+    100% {margin-top:   8%;}
+}
+</style>
+<script>
+var dropped1 = false;
+var dropped2 = false;
+var dropped3 = false;
+var dropped4 = false;
+var dropped5 = false;
+
+function drop(i) {
+	var id = "bauble" + i;
+	var bauble = document.getElementById(id);
+	bauble.className += " dropped";
+}
+
+
+</script>
+</head>
+<body>
+		<img id="tree" src="assets/PohutukawaCornwallis-small.png"	alt="Pohutukawa tree" title="Pohutukawa tree"/>
+
+		<img id="bauble1" class="baubles" onclick="drop(1)" src="assets/blue.png" title="bauble" alt="bauble"/>
+		<img id="bauble2" class="baubles" onclick="drop(2)" src="assets/green.png" title="bauble" alt="bauble"/>
+		<img id="bauble3" class="baubles" onclick="drop(3)" src="assets/orange.png" title="bauble" alt="bauble"/>
+		<img id="bauble4" class="baubles" onclick="drop(4)" src="assets/pink.png" title="bauble" alt="bauble"/>
+		<img id="bauble5" class="baubles" onclick="drop(5)" src="assets/red.png" title="bauble" alt="bauble"/>
+	
+</body>
+</html>

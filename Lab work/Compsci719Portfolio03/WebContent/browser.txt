@@ -1,0 +1,5 @@
+
+The browser used for testing during was:
+
+  firefox 42.0
+

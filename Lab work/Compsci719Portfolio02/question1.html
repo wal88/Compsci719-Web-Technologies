@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>CSS Transforms and Transitions</title>
+<style>
+#container {
+	margin: auto;
+	width: 900px;
+	padding: 8px;
+	background-color: #8080A0;
+}
+
+h1 {
+	border-bottom-style: solid;
+}
+
+.absolute-pos div {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.absolute-pos img {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+#div-logo1 {
+	
+}
+
+#img-logo1 {
+	position: relative;
+	left: 200px;
+	top: 100px;
+}
+
+#div-logo2 {
+	
+}
+
+#img-logo2 {
+	position: relative;
+	left: 200px;
+	top: 241px;
+	transform: scaleY(-1);
+	opacity: 0.6;
+}
+
+#div-logo3 {
+	
+}
+
+#img-logo3 {
+	position: relative;
+	left: 200px;
+	top: 290px;
+}
+
+#div-nowopen {
+	
+	
+}
+
+#nowopen {
+	position: absolute;
+	left: -100px;
+	top:  220px;
+	z-index: 1;
+	transform: rotate(-45deg) scale(0.3);
+	transition: transform 3s;
+	transition-timing-function: ease;
+}
+
+#nowopen:hover {
+	  transform: rotate(-45deg) scale(0.6);
+	 
+	 
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+	<div id="container">
+		<h1>CSS Transforms and Transitions</h1>
+
+		<div id="mainviewer" style="position: relative;">
+			<div style="width: 100%; height: 600px; background-color: white;">
+			</div>
+			<div class="absolute-pos"
+				style="position: absolute; left: 0px; top: 0px;">
+
+				<div id="div-nowopen">
+					<img id="nowopen" src="question1-now-open.png" />
+				</div>
+
+				<div id="div-logo1">
+					<img id="img-logo1" src="question1-logo.png" />
+				</div>
+
+				<div id="div-logo2">
+					<img id="img-logo2" src="question1-logo.png" />
+				</div>
+
+				<div id="div-logo3">
+					<img id="img-logo3" src="question1-logo.png" />
+				</div>
+
+
+
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Digital Click</title>
+<style>
+h2 {
+	border: 10px solid black;
+	width: 120px;
+	margin: 75px;
+	padding: 5px;
+}
+</style>
+<script>
+	var timeoutID;
+	
+	function displayTime() {
+		return new Date();
+	}
+
+	function getHours() {
+		return new Date().getHours();
+	}
+
+	function getMinutes() {
+		return new Date().getMinutes();
+	}
+
+	function getSeconds() {
+		return new Date().getSeconds();
+	}
+
+	function setTime() {
+		document.getElementById("hrs").innerHTML = getHours();
+		
+		if (getMinutes() < 10) {
+			document.getElementById("mins").innerHTML = "0" + getMinutes();
+		} else {
+			document.getElementById("mins").innerHTML = getMinutes();
+		}
+		
+		if (getSeconds() < 10) {
+			document.getElementById("secs").innerHTML = " 0" + getSeconds(); 
+		} else {
+			document.getElementById("secs").innerHTML = " " + getSeconds();
+		}
+		
+	}
+
+	timeoutID = window.setInterval(setTime, 1000);
+	
+	function pauseTime() {
+		clearInterval(timeoutID);
+	}
+	
+	function resumeTime() {
+		timeoutID = window.setInterval(setTime, 1000);
+	}
+	
+	
+</script>
+</head>
+<body onload="setTime()">
+	<h1>Current of the Day is:</h1>
+
+	<div>
+		<h2>
+			<span id="hrs"></span> <span> : </span><span id="mins"></span><span
+				id="secs" style="text-size: 10px;"></span>
+		</h2>
+	</div>
+	
+	<button onclick="pauseTime();">
+	Pause
+    </button>
+    
+    <button onclick="resumeTime();">
+	Resume
+    </button>
+    
+	
+
+</body>
+</html>

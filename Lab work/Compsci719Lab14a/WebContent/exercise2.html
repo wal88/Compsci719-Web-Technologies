@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="upload" method="POST" autocomplete="on" action="ImageGallerySubmit" enctype="multipart/form-data">
+	<label for="file_selector"> Upload Your Picture</label>
+	<input type="file" id="file_selector" name="image_file" required>
+	<br />
+	<label for="caption">Please enter the caption: </label>
+	<input type="text" name="caption" id="caption" required pattern=".*\S+.*"/>
+	<br />
+	<input type="submit" value="Submit" />
+	</form>
+</body>
+</html>

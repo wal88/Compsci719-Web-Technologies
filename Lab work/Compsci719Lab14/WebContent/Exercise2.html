@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exercise2</title>
+</head>
+<body>
+	<form name="upload" method="POST" autocomplete="on" action="ImageGallerySubmit" enctype="multipart/form-data">
+	<h1> Please Upload an image:</h1>
+	
+	<input type="file" id="file_selector" name="image_file" required>
+	<br/> <br/>
+	<label for="caption">Please enter your caption: </label>
+	<input type="text" name="caption" id="caption" required pattern=".*\S+.*"/>
+	<br />
+	<input type="submit" value="Submit" />
+	</form>
+</body>
+</html>

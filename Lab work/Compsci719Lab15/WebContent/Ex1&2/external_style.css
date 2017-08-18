@@ -1,0 +1,44 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	font-family: "Times New Roman";
+	padding: 50px 20%;
+}
+
+h1, h2, h3, b, strong {
+	color: Plum;
+}
+
+h1 {
+	text-transform: uppercase;
+}
+
+h1, h3 {
+	text-align: center;
+}
+
+h2 {
+	text-align: right;
+}
+
+h2:after {
+	content: ' ';
+	display: block;
+	border: 2px solid black;
+	color: LightSlateGray;
+}
+
+hr {
+	border: LightSlateGray 0.5px dashed;
+	width: 50%;
+}
+
+p {
+	color: DarkSlateGray;
+	font-family: Georgia, serif;
+	font-style: italic;
+}
+
+#number1-achievement {
+color:red;
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>image gallery</title>
+<meta charset="UTF-8" />
+<style onload="loadThumbHolders()">
+div#wrapper {
+	margin: auto;
+	height: 100%;
+	padding-top: 5%;
+}
+
+div#container {
+	margin: auto;
+	width: 717px;
+	/* Twice the width to allow for page opening plus padding */
+	height: 409px; /* padding with 15 px top and bottom */
+	position: relative;
+	padding: 15px;
+	border: 5px double navy;
+}
+
+div#descriptionText {
+	font-size: 1.25em;
+	padding: 30px 20px;
+	color: Navy;
+	font-family: Garamond, serif;
+	border: 1px dotted navy;
+}
+
+.page {
+	position: absolute;
+	width: 351px;
+	height: 409px;
+}
+
+div#descriptionText {
+	margin: auto;
+	box-sizing: border-box;
+	text-align: justify;
+	left: 381px; /* leaving space for twice the padding from the left */
+	top: 15px;
+}
+
+img#featuredImage {
+	left: 15px;
+	top: 15px;
+}
+
+div#thumbview {
+	margin: auto;
+	width: 1120px;
+	min-width: 1120px;
+	height: 130px;
+	margin-top: 40px;
+	padding: 0px 5px;
+	box-sizing: border-box;
+}
+
+div.thumb-holder {
+	padding: 10px 5px;
+	height: 100%;
+	width: 100px;
+	float: left;
+	box-sizing: border-box;
+	background-color: LightGray;
+}
+
+div#thumbview img {
+	position: relative;
+	left: auto;
+	top: auto;
+	margin: auto;
+	height: 100px;
+	width: 90px;
+	box-sizing: inherit;
+	cursor: pointer;
+	/* http://www.w3schools.com/cssref/pr_class_cursor.asp */
+}
+</style>
+
+<script>
+	"use strict";
+
+	// To understand the following script, make sure to have gone through the examples in p.345 and p.347 of the textbook
+
+	// The imageCollection is declared in the <head>, so the rest of the page including any scripts further down will know about it
+	// There are 11 strings in imageCollection, which are the filenames (minus file extension) of the 11 images
+	// The contents are at position 0 to 10 not 1 to 11!
+	var imageCollection = [
+			{
+				"name" : "arctic_fox",
+				"description" : "The Arctic fox, also known as the white fox, polar fox, or snow fox, is a small fox native to the Arctic regions of the Northern Hemisphere and common throughout the Arctic tundra biome. It is well adapted to living in cold environments."
+			},
+			{
+				"name" : "grazing_wombat",
+				"description" : "Wombats are short-legged, muscular quadrupedal marsupials that are native to Australia. They are about 1 m in length with small, stubby tails. There are three extant species and they are all members of the family Vombatidae."
+			},
+			{
+				"name" : "Himalayan_Pika",
+				"description" : "The Himalayan pika is a species of small mammal in the pika family. It is found at high altitudes in remote areas of Tibet and possibly also in Nepal. The IUCN has listed this species as being of \"least concern\"."
+			},
+			{
+				"name" : "lynx",
+				"description" : "A lynx is any of the four species within the Lynx genus of medium-sized wild cats, which includes the bobcat."
+			},
+			{
+				"name" : "Pallas_Cat",
+				"description" : "The Pallas's cat, also called the manul, is a small wild cat with a broad but fragmented distribution in the grasslands and montane steppes of Central Asia."
+			},
+			{
+				"name" : "Pallas_Cat2",
+				"description" : "The Pallas's cat, also called the manul, is a small wild cat with a broad but fragmented distribution in the grasslands and montane steppes of Central Asia."
+			},
+			{
+				"name" : "pika",
+				"description" : "A pika is a small mammal, with short limbs, very round body, rounded ears, and no external tail. Pikas look like a combination of a rabbit, guinea pig or vole. They live in mountainous countries in Asia, with one species also in North America."
+			},
+			{
+				"name" : "quokka",
+				"description" : "The quokka is a small macropod about the size of a domestic cat. Like other marsupials in the macropod family, the quokka is herbivorous and mainly nocturnal. The quokka has little fear of humans. It is, however, illegal for members of the public to handle the animals in any way. The maximum penalty for animal cruelty is a $50,000 fine and five years in jail.\nSince a 2013 Huffington Post feature article, it has become popular to take \"selfies\" with the animal where it seemingly smiles, which has caused many to label it \"the happiest animal in the world\"."
+			},
+			{
+				"name" : "RedPanda",
+				"description" : "The red panda, also called the lesser panda, the red bear-cat, and the red cat-bear, is a mammal native to the eastern Himalayas and southwestern China."
+			},
+			{
+				"name" : "wombat2",
+				"description" : "Wombats are short-legged, muscular quadrupedal marsupials that are native to Australia. They are about 1 m in length with small, stubby tails. There are three extant species and they are all members of the family Vombatidae."
+			},
+			{
+				"name" : "wombats",
+				"description" : "Wombats are short-legged, muscular quadrupedal marsupials that are native to Australia. They are about 1 m in length with small, stubby tails. There are three extant species and they are all members of the family Vombatidae."
+			},
+
+	];
+
+	var selectedImage = 0; // index of image selected, between 0 and length of array non-inclusive
+
+	function changeImage(numImage) {
+		// uses the variable numImage, which is passed in, to access the associated value from the "imageCollection" declared above,
+		// then sets the featuredImage to this image
+		if (numImage == 2 || numImage == 6) {
+			var audio = new Audio('http://trivex.net/pikapics/sounds/kachu.wav');
+			audio.play();
+		}
+		var featuredImage = document.getElementById("featuredImage");
+
+		featuredImage.src = "images/" + imageCollection[numImage].name + ".jpg"; // mustn't forget the file extension and the "images/" folder prefix
+		featuredImage.title = imageCollection[numImage].name;
+		featuredImage.alt = imageCollection[numImage].name;
+
+		document.getElementById("descriptionText").innerHTML = imageCollection[numImage].description;
+
+		thumbUnclick(selectedImage);
+
+		// leave this line at the end of this function
+		selectedImage = numImage; // keep track for next time of what image has been selected
+
+		thumbClick(selectedImage);
+
+	}
+
+	function loadRandomImage() {
+		// Generate the random index into the array of images:
+		// Math.random returns a random decimal point number between 0 and 1
+		// We want a *whole* number (int) between 0 inclusive and the number of images in imageCollection exclusive
+		// To get a whole number, use Math.floor() to round down.
+		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+		var numImage = Math.floor(Math.random() * (imageCollection.length)); // generates a number between 0 and upto but not including 11: [0, 11). 
+
+		// Now we know number of the random image we want to show, so change the featured image using this:
+		changeImage(numImage);
+		document.getElementById("container").style.backgroundColor = "red";
+	}
+
+	function thumbClick(imageNum) {
+		var thumbList = document.getElementsByClassName("thumb-holder");
+		thumbList[imageNum].style.backgroundColor = "Gray";
+	}
+
+	function thumbUnclick(imageNum) {
+		var thumbList = document.getElementsByClassName("thumb-holder");
+		thumbList[imageNum].style.backgroundColor = "LightGray";
+	}
+
+	function loadThumbHolders() {
+		var thumbnailDiv;
+		for (var i = 0; i < 11; i++) {
+			
+			thumbnailDiv = document.createElement("div");
+			thumbnailDiv.className = "thumb-holder";
+			var thumbnailImg = document.createElement("img");
+			thumbnailImg.src = "images/thumbs/" + i + ".gif";
+			thumbnailImg.alt = "thumbnail" + i;
+			thumbnailImg.id = i;
+			thumbnailImg.addEventListener("click", delegateChangeImage(i), false);
+			thumbnailDiv.appendChild(thumbnailImg);
+			document.getElementById("thumbview").appendChild(thumbnailDiv);
+		}
+	}
+	
+	function delegateChangeImage(i) {
+		return function(mouseEvent) {
+			changeImage(i);
+		}
+	}
+
+
+
+
+
+	//	onclick=\"changeImage(" + i + ")\"
+</script>
+</head>
+<body onload="loadRandomImage()">
+
+	<div id="wrapper">
+		<div id="container">
+			<img class="page" id="featuredImage" src="images/quokka.jpg"
+				title="placeholder" alt="placeholder" />
+			<!-- for valid HTML need to set src to some valid value, even if JavaScript will overwrite it -->
+			<div class="page" id="descriptionText">Placeholder text.
+				Descriptions should go here.</div>
+		</div>
+	</div>
+	<div id="thumbview">
+
+		<!-- innerHTML TO BE POPULATED -->
+	</div>
+</body>
+</html>

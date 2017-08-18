@@ -1,0 +1,57 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	font-family: Roboto, Georgia, serif;
+	padding: 50px 20%;
+}
+
+h1, h2, h3, b, strong {
+	color: Plum;
+}
+
+h1 {
+	text-transform: uppercase;
+}
+
+h1, h3 {
+	text-align: center;
+}
+
+h2 {
+	text-align: right;
+}
+
+h2:after {
+	content: ' ';
+	display: block;
+	border: 2px solid black;
+	color: LightSlateGray;
+}
+
+hr {
+	border: LightSlateGray 0.5px dashed;
+	width: 50%;
+}
+
+p {
+	color: DarkSlateGray;
+	font-style: italic;
+}
+
+#number1-achievement {
+color:red;
+}
+
+thead {
+	font-weight: bold;
+	color:Plum ;
+}
+
+table#tabular {
+  border-collapse: separate;
+  border-spacing: 20px 0;
+}
+
+td {
+  padding: 10px 0;
+}

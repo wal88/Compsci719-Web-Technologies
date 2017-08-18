@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>ICT-Gradschool Midterm Questionnaire</title>
+<!-- BONUS: Check out this stylesheet for some styles you can use to make your form pretty!! -->
+<link rel="stylesheet" href="css/questionnaire.css" />
+
+<!-- jQuery hosted by Google -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+#Email:invalid {
+  background-color: #ffdddd;
+}
+#Email:valid{
+ background-color: #ddffdd;
+}
+</style>
+
+</head>
+<body>
+	<div id="container">
+		<h1>ICT-Gradschool Midterm Questionnaire</h1>
+		<form id="questionnaire-form" name="questionnaire" method="get"
+		action="FormDataList" onsubmit="event.preventDefault();}"
+			autocomplete="on" >
+			<fieldset>
+				<legend>Your details</legend>
+				<label for="yourName">Name: </label> 
+				<input type="text" id="yourname" name="name" required /> 
+				<br> 
+				<br> 
+				<label for="Email">Email: </label> 
+				<input type="email" id="Email" name="E-Mail" placeholder="me@aucklanduni.ac.nz"
+				 pattern="[a-zA-Z0-9]+@aucklanduni.ac.nz" />
+				<br> 
+				<br> 
+				<label for="city">Your city: </label> <input list="citylist" name="city">
+				<datalist id="citylist">
+					<option value="Auckland">
+					<option value="Christchurch">
+					<option value="Hamilton">
+				</datalist>
+			</fieldset>
+			<fieldset>
+				<legend>Questionnaire</legend>
+				<!-- TODO Exercise 3 part 3: "How are you finding the course" checkboxes  -->
+				<br>
+				<label for="satification">How are you finding the course?Tick all applicable: </label> 
+					<br>
+					<br>
+					<input type="checkbox" name="enjoy" value="Enjoy">Enjoying it
+					<input type="checkbox" name="challeng" value="Challeng">Challenging 
+					<input type="checkbox" name="scu" value="Scu">Still Catching up 
+					<input type="checkbox" name="toh" value="Toh">Too hard 
+					<input type="checkbox" name="te" value="Te">Too many exercises
+					<input type="checkbox" name="ne" value="Ne">Not enough exercises
+					<input type="checkbox" name="confused" value="Confused">Confused  
+                 <br>
+                 <br>
+				<!-- TODO Exercise 3 part 4: "Choose one that best describes your experience" radio buttons  -->
+				<label for="describe">Choose one that best describes your experience so far: </label> 
+				<br>
+			    <br>
+			    <input type="radio" name="describe" value="ll"> Learning a lot
+                <input type="radio" name="describe" value="nle"> Not learning enough
+                <input type="radio" name="describe" value="ok"> Okay
+                <br>
+			    <br>
+			    <label for="rate">Rating the course so far on a scale from 1(poor) to 10(excellent): </label>	   
+			    <input type="number" name="rate" min="1" max="10">
+				<br>
+				<br>
+				<label for="favourite">Pick your favorite among the animals featured in the course's image gallery exercise: </label> 
+			    <select>
+                <option value="quokka">quokka</option>
+                <option value="arcticfox">arctic fox</option>
+                <option value="wombat">wombat</option>
+                <option value="HimalayanPika">Himalayan Pika</option>
+                <option value="lynx">lynx</option>
+                <option value="PallasCat">Pallas Cat</option>
+                <option value="pika">pika</option>
+                <option value="RedPanda">RedPanda</option>
+                </select>
+                <br>
+                <br>
+                <label for="improved">How can the course be improved? Choose one or more: </label> 
+                <br>
+                <select name="improved" multiple>
+                <option value="anim">Access to real cuddly animals for petting(instead of just animal picture)</option>
+                <option value="coff">More coffee</option>
+                <option value="fp">Free printing</option>
+                <option value="mh">More hours in the day</option>
+                <option value="fpark">Free parking</option>
+                <option value="vur">Vouchers for the local café</option>
+                </select>
+                <br>
+                <br>
+                 <label for="comments">Additional comments: </label> 
+                <br>
+                <textarea rows="4" cols="50">
+                </textarea>
+			</fieldset>
+			<input type="submit" value="Done!" a href="FormDataList"> 
+			<input type="reset" value="Clear" />
+		</form>
+	</div>
+</body>
+</html>
